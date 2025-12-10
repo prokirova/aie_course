@@ -59,3 +59,49 @@ def test_correlation_and_top_categories():
     city_table = top_cats["city"]
     assert "value" in city_table.columns
     assert len(city_table) <= 2
+
+def test_compute_quality_flags_constant_column():
+    """Проверка флага has_constant_columns на данных с константной колонкой."""
+    df = pd.DataFrame({
+        "id": [1, 2, 3, 4],
+        "status": ["active", "active", "active", "active"],  # константа
+        "score": [0.1, 0.2, 0.3, 0.4]
+    })
+
+    summary = summarize_dataset(df)
+    missing_df = missing_table(df)
+    flags = compute_quality_flags(summary, missing_df)
+
+    assert flags["has_constant_columns"] is True, \
+        "Флаг has_constant_columns должен быть True, так как колонка 'status' константная"
+
+
+def test_compute_quality_flags_high_cardinality_categorical():
+    """Проверка флага has_high_cardinality_categoricals."""
+    # Создаём категориальную колонку с 60 уникальными значениями (> порога 50)
+    df = pd.DataFrame({
+        "user_id": [f"user_{i}" for i in range(60)],
+        "value": range(60)
+    })
+
+    summary = summarize_dataset(df)
+    missing_df = missing_table(df)
+    flags = compute_quality_flags(summary, missing_df)
+
+    assert flags["has_high_cardinality_categoricals"] is True, \
+        "Флаг has_high_cardinality_categoricals должен быть True при >50 уникальных категорий"
+
+
+def test_compute_quality_flags_no_issues():
+    """Проверка, что флаги False, когда проблем нет"""
+    df = pd.DataFrame({
+        "category": ["A", "B", "C"] * 10,  # 3 уникальных — нормально
+        "number": range(30)
+    })
+
+    summary = summarize_dataset(df)
+    missing_df = missing_table(df)
+    flags = compute_quality_flags(summary, missing_df)
+
+    assert flags["has_constant_columns"] is False
+    assert flags["has_high_cardinality_categoricals"] is False
