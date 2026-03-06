@@ -1,0 +1,24 @@
+{
+  "experiment_id": "E4",
+  "dataset": "EMNIST",
+  "seed": 42,
+  "architecture": {
+    "model_type": "MLP",
+    "hidden_sizes": [
+      256,
+      128
+    ],
+    "activation": "ReLU",
+    "dropout": 0.0,
+    "batchnorm": true
+  },
+  "optimizer": "Adam",
+  "lr": 1e-33,
+  "momentum": 0.0,
+  "weight_decay": 0.0,
+  "batch_size": 64,
+  "epochs_trained": 14,
+  "best_val_accuracy": 0.8528,
+  "best_val_loss": 0.466,
+  "weights_file": "best_model.pt"
+}
