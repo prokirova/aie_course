@@ -2,32 +2,32 @@
 
 ## 1. Кратко: что сделано
 
-- Какой датасет выбран (A/B/C) и почему.
-- Что сравнивалось в части A (регуляризация) и в части B (оптимизация).
+- Выбран датасет B (EMNIST)
+- В части A сравнивались архитектуры с Dropout, BatchNorm, в части B - оптимизаторы и lr
 
 ## 2. Среда и воспроизводимость
 
-- Python:
-- torch / torchvision:
-- Устройство (CPU/GPU):
-- Seed:
+- Python: 3.12.12
+- torch / torchvision: torch 3.12 
+- Устройство (CPU/GPU): CPU
+- Seed: 42
 - Как запустить: открыть `HW08-09.ipynb` и выполнить Run All.
 
 ## 3. Данные
 
-- Датасет: (KMNIST / EMNIST Balanced / CIFAR10)
-- Разделение: train/val/test (например, train split 80/20 + test из torchvision)
-- Трансформации (transform): (ToTensor / Normalize / другое)
-- Комментарий (1-3 предложения): что важно в данных (число классов, размерность, сложность)
+- Датасет: EMNIST Balanced
+- Разделение: train split 80/20 + test из torchvision
+- Трансформации (transform): ToTensor, Normalize
+- Комментарий (1-3 предложения): важен баланс в данных и их распределение
 
 ## 4. Базовая модель и обучение
 
-- Модель MLP (кратко): число скрытых слоёв, размеры слоёв, активация
+- Модель MLP (кратко): 3 слоя: 512, 256, 128, активация ReLU
 - Loss: CrossEntropyLoss
-- Базовый Optimizer (для части A): Adam (lr=...)
-- Batch size:
-- Epochs (макс):
-- EarlyStopping: (patience=..., metric=val_accuracy или val_loss)
+- Базовый Optimizer (для части A): Adam (lr=1e-3)
+- Batch size: 64
+- Epochs (макс): 20
+- EarlyStopping: patience=3, metric=val_accuracy или val_loss
 
 ## 5. Часть A (S08): регуляризация (E1-E4)
 
