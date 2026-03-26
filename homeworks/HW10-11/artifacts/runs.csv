@@ -1,0 +1,7 @@
+experiment_id,task,dataset,seed,model_summary,optimizer,lr,epochs_trained,best_val_accuracy,test_accuracy,precision,recall,mean_iou,notes
+C1,classification,STL10,42,SimpleCNN,Adam,0.001,10.0,0.609,0.609,,,,no augmentations
+C2,classification,STL10,42,SimpleCNN,Adam,0.001,10.0,0.674,0.674,,,,with augmentations
+C3,classification,STL10,42,ResNet18 (head-only),Adam,0.001,10.0,0.965,0.965,,,,"pretrained backbone frozen, only fc trained"
+C4,classification,STL10,42,ResNet18 (layer4 + fc fine-tune),Adam,1e-3 (fc) / 1e-4 (layer4),10.0,1.0,1.0,,,,partial fine-tuning (layer4 + fc)
+V1,detection,KITTI,42,FasterRCNN_ResNet50_FPN (COCO pretrained),,,,,,0.13333333333333333,0.045112781954887216,0.7537527680397034,score_threshold=0.3
+V2,detection,KITTI,42,FasterRCNN_ResNet50_FPN (COCO pretrained),,,,,,0.13333333333333333,0.045112781954887216,0.7537527680397034,score_threshold=0.7

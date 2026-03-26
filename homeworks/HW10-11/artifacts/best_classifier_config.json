@@ -1,0 +1,8 @@
+{
+    "experiment_id": "C4",
+    "dataset": "STL10",
+    "model": "C4",
+    "seed": 42,
+    "best_val_accuracy": 1.0,
+    "epochs": 10
+}
