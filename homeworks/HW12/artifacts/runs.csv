@@ -1,0 +1,5 @@
+experiment_id,task,dataset,seed,split_summary,window_size,horizon,model_summary,features_summary,scaler,optimizer,lr,epochs_trained,best_val_mae,best_val_rmse,best_val_mape,test_mae,test_rmse,test_mape,notes
+B1,forecasting,S12-hw-dataset.csv,42,train:2025-01-01/2025-05-07 val:2025-05-07/2025-06-03 test:2025-06-03/2025-06-29,,1,naive-last,lag_1,,,,,6.4434,8.2035,4.3946,,,,
+B2,forecasting,S12-hw-dataset.csv,42,train:2025-01-01/2025-05-07 val:2025-05-07/2025-06-03 test:2025-06-03/2025-06-29,7,1,moving-average-7,rolling_mean_7,,,,,12.7237,15.2363,8.8288,,,,
+B3,forecasting,S12-hw-dataset.csv,42,train:2025-01-01/2025-05-07 val:2025-05-07/2025-06-03 test:2025-06-03/2025-06-29,,1,Ridge(alpha=1.0),"lag_1,lag_7,lag_14,rolling_mean_7,rolling_std_7,day_of_week,month,day_of_month",StandardScaler,,,,6.3412,7.9352,4.2457,,,,
+R1,forecasting,S12-hw-dataset.csv,42,train:2025-01-01/2025-05-07 val:2025-05-07/2025-06-03 test:2025-06-03/2025-06-29,14,1,"GRU(hidden=64,layers=2)",target_scaled,StandardScaler(target),Adam,0.001,50,5.9296,7.688,3.9325,6.6519,8.4324,4.2414,best model selected by val MAE

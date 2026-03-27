@@ -1,0 +1,15 @@
+{
+  "model": "GRUForecaster",
+  "input_size": 1,
+  "hidden_size": 64,
+  "num_layers": 2,
+  "dropout": 0.2,
+  "window_size": 14,
+  "horizon": 1,
+  "batch_size": 32,
+  "lr": 0.001,
+  "epochs": 50,
+  "seed": 42,
+  "scaler": "StandardScaler(target)",
+  "best_val_mae": 5.7475
+}
