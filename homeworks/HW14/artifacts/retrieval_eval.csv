@@ -1,0 +1,12 @@
+query,expected_source,retrieved_sources,hit_at_k,rank_of_first_relevant
+Что такое list comprehension?,doc5,"doc5,doc6,doc1,doc14,doc8",1,1
+Как создать виртуальное окружение в Python?,doc3,"doc3,doc1,doc13,doc2,doc14",1,1
+В чём разница между list и tuple?,doc6,"doc6,doc5,doc14,doc1,doc13",1,1
+Как установить библиотеку через pip?,doc4,"doc4,doc2,doc11,doc13,doc1",1,1
+Что такое декораторы в Python?,doc8,"doc1,doc14,doc13,doc15,doc2",0,6
+Как правильно открывать файлы в Python?,doc9,"doc13,doc9,doc1,doc2,doc4",1,2
+Что такое lambda функции?,doc10,"doc10,doc8,doc5,doc14,doc6",1,1
+Что означает PEP 8?,doc14,"doc14,doc9,doc4,doc1,doc6",1,1
+Как отлаживать код на Python?,doc15,"doc1,doc13,doc14,doc15,doc2",1,4
+Кто создал язык Python?,doc1,"doc1,doc13,doc14,doc2,doc4",1,1
+Как запустить python скрипт?,doc13,"doc13,doc1,doc4,doc2,doc14",1,1

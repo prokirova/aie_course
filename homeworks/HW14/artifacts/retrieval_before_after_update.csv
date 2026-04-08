@@ -1,0 +1,4 @@
+query,before_retrieved_sources,after_retrieved_sources,changed
+Что такое f-strings?,"doc9,doc8,doc1","doc9,doc8,doc1",False
+Как работать с JSON?,"doc8,doc15,doc6","doc8,doc15,doc6",False
+Что такое генераторы?,"doc8,doc1,doc15","doc8,doc1,doc15",False
