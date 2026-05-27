@@ -1,0 +1,26 @@
+{
+  "training": {
+    "random_state": 42,
+    "test_size": 0.2,
+    "embedding_sample_size": 3000
+  },
+  "data": {
+    "rows": 100000,
+    "processed_path": "data/churn_text_synthetic.csv"
+  },
+  "transformer": {
+    "model_name": "models/qwen2.5-0.5b-instruct",
+    "cache_dir": null,
+    "device": "cuda",
+    "max_length": 64,
+    "batch_size": 64
+  },
+  "artifacts": {
+    "model_path": "artifacts/churn_model.joblib",
+    "metrics_path": "artifacts/metrics.json"
+  },
+  "service": {
+    "host": "0.0.0.0",
+    "port": 8000
+  }
+}
